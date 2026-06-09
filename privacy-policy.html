@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Privacy Policy for EMI Check — Learn how we handle your data, cookies, and third-party services like Google AdSense and Analytics.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://emicheck.in/privacy-policy.html">
+  <title>Privacy Policy — EMI Check</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💰</text></svg>">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary:      #6366f1;
+      --primary-dark: #4f46e5;
+      --primary-rgb:  99, 102, 241;
+      --success:      #059669;
+      --amber:        #d97706;
+      --bg:           #eef2ff;
+      --surface:      #ffffff;
+      --surface-2:    #f8fafc;
+      --text-1:       #1e293b;
+      --text-2:       #64748b;
+      --text-3:       #94a3b8;
+      --border:       #e2e8f0;
+      --radius:       18px;
+      --radius-sm:    10px;
+      --shadow-lg:    0 20px 48px rgba(99,102,241,.1), 0 4px 16px rgba(0,0,0,.06);
+      --hdr-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 55%, #f64f59 100%);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      background: var(--bg);
+      color: var(--text-1);
+      line-height: 1.7;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ---- Header ---- */
+    .site-header {
+      background: var(--hdr-gradient);
+      color: #fff;
+      padding: 44px 20px 64px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .site-header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 50%, rgba(255,255,255,.12) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255,255,255,.08) 0%, transparent 40%);
+    }
+    .site-header::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 48px;
+      background: var(--bg);
+      clip-path: ellipse(60% 100% at 50% 100%);
+    }
+    .header-inner {
+      position: relative;
+      z-index: 1;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: rgba(255,255,255,.8);
+      text-decoration: none;
+      font-size: 13.5px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      transition: color .2s;
+    }
+    .back-link:hover { color: #fff; }
+    .site-header h1 {
+      font-size: clamp(24px, 5vw, 40px);
+      font-weight: 900;
+      letter-spacing: -1px;
+      margin-bottom: 8px;
+    }
+    .site-header .effective-date {
+      font-size: 13.5px;
+      opacity: .75;
+    }
+
+    /* ---- Layout ---- */
+    .container {
+      max-width: 780px;
+      margin: -24px auto 0;
+      padding: 0 20px 64px;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ---- TOC Card ---- */
+    .toc-card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+      padding: 24px 28px;
+      margin-bottom: 24px;
+    }
+    .toc-title {
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .6px;
+      color: var(--text-3);
+      margin-bottom: 14px;
+    }
+    .toc-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 24px;
+    }
+    .toc-list li a {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--primary-dark);
+      text-decoration: none;
+      transition: color .15s;
+    }
+    .toc-list li a:hover { color: var(--primary); }
+    .toc-num {
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      background: rgba(var(--primary-rgb),.1);
+      color: var(--primary-dark);
+      font-size: 10.5px;
+      font-weight: 800;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* ---- Content Card ---- */
+    .content-card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+    }
+
+    /* ---- Sections ---- */
+    .policy-section {
+      padding: 32px 32px 28px;
+      border-bottom: 1px solid var(--border);
+    }
+    .policy-section:last-child { border-bottom: none; }
+
+    .section-hdr {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .section-num {
+      width: 30px; height: 30px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(var(--primary-rgb),.12), rgba(var(--primary-rgb),.22));
+      color: var(--primary-dark);
+      font-size: 13px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .policy-section h2 {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--text-1);
+      scroll-margin-top: 24px;
+    }
+
+    .policy-section p {
+      font-size: 14.5px;
+      color: var(--text-2);
+      margin-bottom: 12px;
+    }
+    .policy-section p:last-child { margin-bottom: 0; }
+
+    .policy-section ul, .policy-section ol {
+      margin: 10px 0 12px 0;
+      padding-left: 20px;
+    }
+    .policy-section li {
+      font-size: 14.5px;
+      color: var(--text-2);
+      margin-bottom: 6px;
+      line-height: 1.65;
+    }
+    .policy-section li:last-child { margin-bottom: 0; }
+
+    .policy-section strong {
+      color: var(--text-1);
+      font-weight: 700;
+    }
+
+    .policy-section a {
+      color: var(--primary-dark);
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(var(--primary-rgb),.3);
+      transition: border-color .15s;
+    }
+    .policy-section a:hover { border-color: var(--primary); }
+
+    /* ---- Highlight boxes ---- */
+    .info-box {
+      background: rgba(var(--primary-rgb),.06);
+      border: 1px solid rgba(var(--primary-rgb),.18);
+      border-left: 3px solid var(--primary);
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin: 14px 0;
+    }
+    .info-box p {
+      font-size: 13.5px;
+      color: var(--primary-dark);
+      margin: 0;
+    }
+    .warn-box {
+      background: rgba(217,119,6,.06);
+      border: 1px solid rgba(217,119,6,.2);
+      border-left: 3px solid var(--amber);
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin: 14px 0;
+    }
+    .warn-box p {
+      font-size: 13.5px;
+      color: #92400e;
+      margin: 0;
+    }
+
+    /* ---- Contact box ---- */
+    .contact-box {
+      background: linear-gradient(135deg, rgba(var(--primary-rgb),.07), rgba(var(--primary-rgb),.03));
+      border: 1.5px solid rgba(var(--primary-rgb),.2);
+      border-radius: var(--radius-sm);
+      padding: 20px 22px;
+      margin-top: 14px;
+    }
+    .contact-box p {
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+
+    /* ---- Footer ---- */
+    .site-footer {
+      background: #1e293b;
+      color: #94a3b8;
+      text-align: center;
+      padding: 22px 20px;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+    .site-footer a {
+      color: #a5b4fc;
+      text-decoration: none;
+    }
+    .site-footer a:hover { text-decoration: underline; }
+
+    /* ---- Responsive ---- */
+    @media (max-width: 600px) {
+      .policy-section { padding: 24px 20px 20px; }
+      .toc-card { padding: 20px; }
+      .toc-list { grid-template-columns: 1fr; }
+      .container { padding: 0 14px 48px; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="back-link">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      Back to EMI Calculator
+    </a>
+    <h1>Privacy Policy</h1>
+    <p class="effective-date">Effective Date: 9 June 2026 &nbsp;&bull;&nbsp; Last Updated: 9 June 2026</p>
+  </div>
+</header>
+
+<main>
+<div class="container">
+
+  <!-- Table of Contents -->
+  <div class="toc-card">
+    <div class="toc-title">Contents</div>
+    <ol class="toc-list">
+      <li><a href="#introduction"><span class="toc-num">1</span> Introduction</a></li>
+      <li><a href="#information-we-collect"><span class="toc-num">2</span> Information We Collect</a></li>
+      <li><a href="#how-we-use"><span class="toc-num">3</span> How We Use Information</a></li>
+      <li><a href="#cookies"><span class="toc-num">4</span> Cookies Policy</a></li>
+      <li><a href="#adsense"><span class="toc-num">5</span> Google AdSense &amp; Ads</a></li>
+      <li><a href="#analytics"><span class="toc-num">6</span> Google Analytics</a></li>
+      <li><a href="#third-party"><span class="toc-num">7</span> Third-Party Links</a></li>
+      <li><a href="#children"><span class="toc-num">8</span> Children's Privacy</a></li>
+      <li><a href="#changes"><span class="toc-num">9</span> Changes to This Policy</a></li>
+      <li><a href="#contact"><span class="toc-num">10</span> Contact Us</a></li>
+    </ol>
+  </div>
+
+  <!-- Policy Content -->
+  <div class="content-card">
+
+    <!-- 1. Introduction -->
+    <div class="policy-section" id="introduction">
+      <div class="section-hdr">
+        <span class="section-num">1</span>
+        <h2>Introduction</h2>
+      </div>
+      <p>Welcome to <strong>EMI Check</strong> ("we", "our", or "us"), accessible at <a href="https://emicheck.in" target="_blank" rel="noopener">https://emicheck.in</a>. We provide a free, browser-based EMI (Equated Monthly Instalment) calculator to help users estimate loan repayments.</p>
+      <p>This Privacy Policy explains what information is collected when you visit our website, how it is used, and your rights in relation to that information. By using EMI Check, you agree to the practices described in this policy.</p>
+      <p>This policy applies to all visitors of <strong>emicheck.in</strong> and complies with:</p>
+      <ul>
+        <li>The <strong>Information Technology Act, 2000</strong> and the IT (Amendment) Act, 2008 (India)</li>
+        <li>The <strong>Information Technology (Reasonable Security Practices and Procedures and Sensitive Personal Data or Information) Rules, 2011</strong></li>
+        <li>The <strong>General Data Protection Regulation (GDPR)</strong> — to the extent applicable to visitors from the European Economic Area</li>
+        <li><strong>Google AdSense</strong> and <strong>Google Analytics</strong> program policies</li>
+      </ul>
+    </div>
+
+    <!-- 2. Information We Collect -->
+    <div class="policy-section" id="information-we-collect">
+      <div class="section-hdr">
+        <span class="section-num">2</span>
+        <h2>Information We Collect</h2>
+      </div>
+      <div class="info-box">
+        <p><strong>EMI Check does not require registration, login, or submission of any personal information.</strong> All calculations happen entirely within your browser — no form data is sent to our servers.</p>
+      </div>
+      <p>However, certain information may be collected automatically when you visit our website:</p>
+
+      <p><strong>a) Automatically Collected Data (via third-party services)</strong></p>
+      <ul>
+        <li><strong>IP address</strong> — collected by Google Analytics and Google AdSense to determine approximate geographic location (country/city level)</li>
+        <li><strong>Browser type and version</strong></li>
+        <li><strong>Operating system</strong></li>
+        <li><strong>Referring URL</strong> (the page you came from)</li>
+        <li><strong>Pages visited and time spent</strong> on our site</li>
+        <li><strong>Device type</strong> (desktop, mobile, tablet)</li>
+        <li><strong>Date and time</strong> of your visit</li>
+      </ul>
+
+      <p><strong>b) Cookies and Tracking Technologies</strong></p>
+      <p>We and our third-party partners (Google AdSense, Google Analytics) use cookies, web beacons, and similar tracking technologies. Details are provided in Section 4.</p>
+
+      <p><strong>c) Data You Voluntarily Provide</strong></p>
+      <p>We do not have any contact forms, comment sections, or user accounts. If you contact us by email (as listed in Section 10), we will receive only the information you choose to include in your message.</p>
+    </div>
+
+    <!-- 3. How We Use Information -->
+    <div class="policy-section" id="how-we-use">
+      <div class="section-hdr">
+        <span class="section-num">3</span>
+        <h2>How We Use Information</h2>
+      </div>
+      <p>The automatically collected information described above is used solely for the following purposes:</p>
+      <ul>
+        <li><strong>Website analytics</strong> — understanding how visitors use the site so we can improve content and performance</li>
+        <li><strong>Advertising</strong> — displaying relevant advertisements through Google AdSense to keep the service free</li>
+        <li><strong>Security and fraud prevention</strong> — detecting and preventing abusive traffic or attacks</li>
+        <li><strong>Performance monitoring</strong> — identifying and resolving technical issues</li>
+      </ul>
+      <p>We do not sell, rent, trade, or otherwise transfer any visitor information to third parties for marketing purposes. We do not use your data to build personal profiles or make automated decisions about individuals.</p>
+    </div>
+
+    <!-- 4. Cookies -->
+    <div class="policy-section" id="cookies">
+      <div class="section-hdr">
+        <span class="section-num">4</span>
+        <h2>Cookies Policy</h2>
+      </div>
+      <p>Cookies are small text files placed on your device by a website. They are widely used to make websites work efficiently and to provide information to the website owner.</p>
+
+      <p><strong>Types of cookies used on EMI Check:</strong></p>
+
+      <p><strong>a) Strictly Necessary Cookies</strong><br>
+      EMI Check itself does not set any strictly necessary cookies. All calculator functions work without cookies.</p>
+
+      <p><strong>b) Analytics Cookies (Google Analytics)</strong><br>
+      These cookies help us understand how visitors interact with our website by collecting information anonymously. See Section 6 for details.</p>
+
+      <p><strong>c) Advertising Cookies (Google AdSense)</strong><br>
+      Google AdSense uses cookies to serve personalised or contextual advertisements based on your browsing behaviour. See Section 5 for details.</p>
+
+      <p><strong>Managing Cookies</strong></p>
+      <p>You can control and delete cookies through your browser settings. Please note that disabling cookies may affect the display of advertisements but will not affect the EMI calculator functionality. Instructions for common browsers:</p>
+      <ul>
+        <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener noreferrer">Google Chrome</a></li>
+        <li><a href="https://support.mozilla.org/en-US/kb/enhanced-tracking-protection-firefox-desktop" target="_blank" rel="noopener noreferrer">Mozilla Firefox</a></li>
+        <li><a href="https://support.apple.com/en-gb/guide/safari/sfri11471/mac" target="_blank" rel="noopener noreferrer">Apple Safari</a></li>
+        <li><a href="https://support.microsoft.com/en-us/microsoft-edge/delete-cookies-in-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" target="_blank" rel="noopener noreferrer">Microsoft Edge</a></li>
+      </ul>
+      <p>You may also opt out of interest-based advertising across participating websites at <a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener noreferrer">www.aboutads.info/choices</a> or <a href="https://www.youronlinechoices.eu/" target="_blank" rel="noopener noreferrer">www.youronlinechoices.eu</a> (EEA users).</p>
+    </div>
+
+    <!-- 5. Google AdSense -->
+    <div class="policy-section" id="adsense">
+      <div class="section-hdr">
+        <span class="section-num">5</span>
+        <h2>Google AdSense &amp; Third-Party Advertisements</h2>
+      </div>
+      <p>EMI Check uses <strong>Google AdSense</strong>, an advertising service provided by Google LLC (or Google Ireland Limited for EEA users), to display advertisements on this website. These ads help us keep EMI Check free for all users.</p>
+      <p>Google AdSense may:</p>
+      <ul>
+        <li>Use cookies and web beacons to serve ads based on your prior visits to this and other websites</li>
+        <li>Use the <strong>DoubleClick cookie</strong> to serve interest-based advertisements</li>
+        <li>Collect data such as your IP address, browser type, and pages visited</li>
+        <li>Share data with Google's advertising partners as described in Google's Privacy Policy</li>
+      </ul>
+      <div class="warn-box">
+        <p>Google AdSense is a third-party service. EMI Check has no control over the data collected by Google through AdSense. We encourage you to review Google's Privacy Policy and advertising settings.</p>
+      </div>
+      <p><strong>Your choices regarding Google advertising:</strong></p>
+      <ul>
+        <li>Opt out of personalised ads: <a href="https://adssettings.google.com/" target="_blank" rel="noopener noreferrer">Google Ad Settings</a></li>
+        <li>Opt out via Network Advertising Initiative: <a href="https://www.networkadvertising.org/choices/" target="_blank" rel="noopener noreferrer">NAI Opt-Out</a></li>
+        <li>Install <a href="https://support.google.com/ads/answer/7395996" target="_blank" rel="noopener noreferrer">Google Analytics Opt-out Browser Add-on</a></li>
+      </ul>
+      <p>For full details, refer to <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a> and <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer">Google's Advertising Policies</a>.</p>
+    </div>
+
+    <!-- 6. Google Analytics -->
+    <div class="policy-section" id="analytics">
+      <div class="section-hdr">
+        <span class="section-num">6</span>
+        <h2>Google Analytics</h2>
+      </div>
+      <p>We use <strong>Google Analytics</strong>, a web analytics service provided by Google LLC, to understand how visitors use EMI Check. Google Analytics collects information anonymously and reports website trends without identifying individual visitors.</p>
+      <p>Data collected by Google Analytics includes:</p>
+      <ul>
+        <li>Pages viewed and time spent on each page</li>
+        <li>How you arrived at the website (search engine, direct link, referral)</li>
+        <li>Approximate geographic location (country and city, derived from IP address)</li>
+        <li>Device and browser information</li>
+        <li>New vs. returning visitor status</li>
+      </ul>
+      <p>Google Analytics sets cookies (including <code>_ga</code>, <code>_gid</code>, and <code>_gat</code>) to distinguish users and throttle request rates. The information generated is transmitted to and stored on Google's servers.</p>
+      <p>We have enabled <strong>IP anonymisation</strong> in Google Analytics, which means your IP address is truncated before storage.</p>
+      <p>You can prevent Google Analytics from collecting your data by installing the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer">Google Analytics Opt-out Browser Add-on</a>.</p>
+      <p>For more information, see <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a> and <a href="https://support.google.com/analytics/answer/6004245" target="_blank" rel="noopener noreferrer">Google Analytics data privacy overview</a>.</p>
+    </div>
+
+    <!-- 7. Third Party Links -->
+    <div class="policy-section" id="third-party">
+      <div class="section-hdr">
+        <span class="section-num">7</span>
+        <h2>Third-Party Links</h2>
+      </div>
+      <p>Our website may display advertisements or contain links to external websites operated by third parties. These third-party sites have their own privacy policies, and we have no control over their content or data practices.</p>
+      <p>We are not responsible for the privacy practices or the content of any third-party websites. We encourage you to read the privacy policy of any external website you visit.</p>
+      <p>The inclusion of a link or advertisement on EMI Check does not imply our endorsement of that website or its operator.</p>
+    </div>
+
+    <!-- 8. Children's Privacy -->
+    <div class="policy-section" id="children">
+      <div class="section-hdr">
+        <span class="section-num">8</span>
+        <h2>Children's Privacy</h2>
+      </div>
+      <p>EMI Check is intended for general audiences and is designed to assist adults with financial planning. The website is <strong>not directed at children under the age of 13</strong> (or under 16 for visitors in the EEA, in line with GDPR).</p>
+      <p>We do not knowingly collect any personal information from children. Since our website does not require registration or data submission of any kind, we do not have mechanisms to verify the age of visitors.</p>
+      <p>If you are a parent or guardian and believe that your child has provided us with personal information, please contact us at the address in Section 10 and we will take steps to delete such information.</p>
+      <p>This section is provided in compliance with the <strong>Children's Online Privacy Protection Act (COPPA)</strong> and applicable Indian law.</p>
+    </div>
+
+    <!-- 9. Changes -->
+    <div class="policy-section" id="changes">
+      <div class="section-hdr">
+        <span class="section-num">9</span>
+        <h2>Changes to This Policy</h2>
+      </div>
+      <p>We may update this Privacy Policy from time to time to reflect changes in our practices, technology, legal requirements, or for other operational reasons. When we do, we will update the <strong>"Last Updated"</strong> date at the top of this page.</p>
+      <p>We encourage you to review this Privacy Policy periodically. Continued use of EMI Check after any changes constitutes your acceptance of the revised policy.</p>
+      <p>For significant changes that materially affect how we handle your data, we will make reasonable efforts to provide a more prominent notice (such as a banner on the homepage).</p>
+    </div>
+
+    <!-- 10. Contact -->
+    <div class="policy-section" id="contact">
+      <div class="section-hdr">
+        <span class="section-num">10</span>
+        <h2>Contact Us</h2>
+      </div>
+      <p>If you have any questions, concerns, or requests regarding this Privacy Policy or your data, please contact us:</p>
+      <div class="contact-box">
+        <p><strong>EMI Check</strong></p>
+        <p>Website: <a href="https://emicheck.in" target="_blank" rel="noopener">https://emicheck.in</a></p>
+        <p>Email: <a href="mailto:nilu.patil1011@gmail.com">nilu.patil1011@gmail.com</a></p>
+        <p>Country: India</p>
+      </div>
+      <p style="margin-top:16px;">We aim to respond to all privacy-related queries within <strong>30 days</strong> of receipt, in accordance with applicable data protection law.</p>
+    </div>
+
+  </div><!-- /content-card -->
+
+</div><!-- /container -->
+</main>
+
+<footer class="site-footer">
+  <p>&copy; 2026 <a href="https://emicheck.in">EMI Check</a> &mdash; Free Online EMI Calculator</p>
+  <p style="margin-top:4px;font-size:12px;opacity:.7">
+    <a href="/">Calculator</a> &nbsp;&bull;&nbsp;
+    <a href="/privacy-policy.html">Privacy Policy</a>
+  </p>
+</footer>
+
+</body>
+</html>
