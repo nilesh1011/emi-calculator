@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn how to calculate home loan EMI in India step by step. Understand the formula, key factors, and use a free EMI calculator to plan your loan.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://emicheck.in/blog/how-to-calculate-home-loan-emi.html">
+  <meta property="og:title" content="How to Calculate EMI for a Home Loan in India — Step by Step">
+  <meta property="og:description" content="Step-by-step guide to calculating home loan EMI in India. Covers the formula, factors, and a practical example.">
+  <meta property="og:type" content="article">
+  <title>How to Calculate EMI for a Home Loan in India — Step by Step | EMI Check</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💰</text></svg>">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --primary: #6366f1; --primary-dark: #4f46e5; --primary-rgb: 99,102,241;
+      --success: #059669; --amber: #d97706;
+      --bg: #eef2ff; --surface: #ffffff; --surface-2: #f8fafc;
+      --text-1: #1e293b; --text-2: #64748b; --text-3: #94a3b8;
+      --border: #e2e8f0; --radius: 18px; --radius-sm: 10px;
+      --shadow-lg: 0 20px 48px rgba(99,102,241,.1), 0 4px 16px rgba(0,0,0,.06);
+      --hdr-gradient: linear-gradient(135deg,#667eea 0%,#764ba2 55%,#f64f59 100%);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; background: var(--bg); color: var(--text-1); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    /* Header */
+    .site-header { background: var(--hdr-gradient); color: #fff; padding: 44px 20px 64px; text-align: center; position: relative; overflow: hidden; }
+    .site-header::before { content:''; position:absolute; inset:0; background: radial-gradient(circle at 20% 50%,rgba(255,255,255,.12) 0%,transparent 50%),radial-gradient(circle at 80% 20%,rgba(255,255,255,.08) 0%,transparent 40%); }
+    .site-header::after { content:''; position:absolute; bottom:0; left:0; right:0; height:48px; background:var(--bg); clip-path:ellipse(60% 100% at 50% 100%); }
+    .header-inner { position:relative; z-index:1; max-width:720px; margin:0 auto; }
+    .back-link { display:inline-flex; align-items:center; gap:6px; color:rgba(255,255,255,.8); text-decoration:none; font-size:13.5px; font-weight:600; margin-bottom:18px; }
+    .back-link:hover { color:#fff; }
+    .post-category { display:inline-block; background:rgba(255,255,255,.15); border:1px solid rgba(255,255,255,.25); border-radius:50px; padding:4px 14px; font-size:12px; font-weight:700; letter-spacing:.4px; margin-bottom:14px; }
+    .site-header h1 { font-size:clamp(22px,4.5vw,38px); font-weight:900; letter-spacing:-.8px; margin-bottom:14px; line-height:1.25; }
+    .post-meta { font-size:13px; opacity:.7; }
+    /* Layout */
+    .container { max-width:760px; margin:-24px auto 0; padding:0 20px 64px; position:relative; z-index:2; }
+    /* Article card */
+    .article-card { background:var(--surface); border-radius:var(--radius); box-shadow:var(--shadow-lg); padding:40px 44px; }
+    /* Typography */
+    .article-card h2 { font-size:22px; font-weight:800; color:var(--text-1); margin:32px 0 12px; padding-top:8px; }
+    .article-card h3 { font-size:17px; font-weight:700; color:var(--primary-dark); margin:22px 0 8px; }
+    .article-card p { font-size:15.5px; color:var(--text-2); margin-bottom:16px; line-height:1.8; }
+    .article-card p:last-child { margin-bottom:0; }
+    .article-card ul, .article-card ol { margin:10px 0 18px 20px; }
+    .article-card li { font-size:15.5px; color:var(--text-2); margin-bottom:8px; line-height:1.75; }
+    .article-card strong { color:var(--text-1); font-weight:700; }
+    .article-card a { color:var(--primary-dark); font-weight:600; text-decoration:none; border-bottom:1px solid rgba(99,102,241,.3); }
+    .article-card a:hover { border-color:var(--primary); }
+    /* Formula box */
+    .formula-box { background:var(--surface-2); border:1px solid var(--border); border-left:3px solid var(--primary); border-radius:var(--radius-sm); padding:14px 18px; margin:18px 0; font-family:'Courier New',monospace; font-size:14px; color:var(--primary-dark); line-height:2; }
+    /* Example box */
+    .example-box { background:rgba(5,150,105,.06); border:1px solid rgba(5,150,105,.2); border-left:3px solid var(--success); border-radius:var(--radius-sm); padding:16px 20px; margin:18px 0; }
+    .example-box p { color:#064e3b; font-size:14.5px; margin-bottom:8px; }
+    .example-box p:last-child { margin-bottom:0; }
+    /* Info box */
+    .info-box { background:rgba(99,102,241,.06); border:1px solid rgba(99,102,241,.18); border-left:3px solid var(--primary); border-radius:var(--radius-sm); padding:14px 18px; margin:18px 0; }
+    .info-box p { font-size:14.5px; color:var(--primary-dark); margin:0; }
+    /* Table */
+    .table-wrap { overflow-x:auto; margin:18px 0; }
+    table { width:100%; border-collapse:collapse; font-size:14.5px; }
+    th { background:var(--surface-2); padding:11px 14px; font-weight:700; color:var(--text-2); text-align:left; border-bottom:1.5px solid var(--border); font-size:12px; text-transform:uppercase; letter-spacing:.5px; }
+    td { padding:11px 14px; border-bottom:1px solid var(--border); color:var(--text-2); }
+    tr:last-child td { border-bottom:none; }
+    tr:hover td { background:rgba(99,102,241,.03); }
+    /* CTA */
+    .cta-box { background:var(--hdr-gradient); border-radius:var(--radius-sm); padding:28px 28px; text-align:center; margin-top:36px; }
+    .cta-box p { color:rgba(255,255,255,.85); font-size:15px; margin-bottom:14px; }
+    .cta-box p:last-child { margin-bottom:0; }
+    .cta-btn { display:inline-block; background:#fff; color:var(--primary-dark); font-size:14.5px; font-weight:800; padding:11px 28px; border-radius:50px; text-decoration:none; border:none; transition:transform .15s,box-shadow .15s; box-shadow:0 4px 14px rgba(0,0,0,.15); }
+    .cta-btn:hover { transform:translateY(-2px); box-shadow:0 6px 18px rgba(0,0,0,.2); border:none; }
+    /* Footer */
+    .site-footer { background:#1e293b; color:#94a3b8; text-align:center; padding:22px 20px; font-size:13px; line-height:1.8; }
+    .site-footer a { color:#a5b4fc; text-decoration:none; }
+    @media(max-width:600px) { .article-card { padding:24px 20px; } .article-card h2 { font-size:19px; } }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="https://emicheck.in" class="back-link">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      EMI Check
+    </a>
+    <div class="post-category">Home Loan</div>
+    <h1>How to Calculate EMI for a Home Loan in India — Step by Step</h1>
+    <p class="post-meta">Published on EMI Check &nbsp;&bull;&nbsp; 5 min read</p>
+  </div>
+</header>
+
+<main>
+<div class="container">
+<article class="article-card">
+
+  <p>Buying a home is one of the biggest financial decisions of your life. For most Indians, this means taking a home loan — and the first question everyone asks is: <strong>how much will my home loan EMI be?</strong> Understanding how to calculate your home loan EMI gives you a clear picture of your monthly commitment before you sign any papers.</p>
+
+  <h2>What Exactly Is a Home Loan EMI?</h2>
+  <p>EMI stands for <strong>Equated Monthly Instalment</strong>. It is the fixed amount you pay to your bank or lender every month until your loan is fully repaid. Each EMI payment has two parts — one portion goes towards repaying the principal (the original loan amount) and the other covers the interest charged by the lender.</p>
+  <p>In the early months of a loan, a larger share of your EMI goes towards interest. As time passes, the interest portion reduces and the principal repayment portion increases. This is called the <strong>reducing balance method</strong>, and it is the standard method used by all banks in India.</p>
+
+  <h2>The Home Loan EMI Formula</h2>
+  <p>The mathematical formula used to calculate home loan EMI is:</p>
+  <div class="formula-box">
+    EMI = P &times; R &times; (1 + R)&#x1D3E; / ((1 + R)&#x1D3E; &minus; 1)<br><br>
+    P = Principal loan amount<br>
+    R = Monthly interest rate = Annual rate &divide; 12 &divide; 100<br>
+    N = Total number of monthly instalments = Tenure in years &times; 12
+  </div>
+  <p>This formula looks complicated, but in practice you never need to calculate it by hand. You can use a free <a href="https://emicheck.in">EMI calculator</a> to get an instant result by entering three values.</p>
+
+  <h2>The Three Factors That Decide Your EMI</h2>
+  <h3>1. Loan Amount (Principal)</h3>
+  <p>This is the amount you borrow from the bank. It is usually the property value minus your down payment. Most banks in India finance up to 75–90% of the property value. A higher loan amount directly means a higher EMI.</p>
+
+  <h3>2. Interest Rate</h3>
+  <p>This is the annual rate at which the bank charges interest on your outstanding loan. Home loan rates in India typically range from 8% to 10.5% depending on the bank, your credit score, and whether you choose a fixed or floating rate. Even a small difference in interest rate can significantly change your EMI and total interest paid over the life of the loan.</p>
+
+  <h3>3. Loan Tenure</h3>
+  <p>This is the number of years you take to repay the loan. Home loans in India can have tenures of up to 30 years. A longer tenure reduces your monthly EMI but increases the total interest you pay. A shorter tenure means a higher EMI but much lower total interest.</p>
+
+  <h2>A Practical Example</h2>
+  <p>Let us say Ramesh wants to buy a flat worth ₹60 lakhs. He makes a down payment of ₹10 lakhs and takes a home loan of ₹50 lakhs at 8.75% interest for 20 years. Here is what his EMI looks like:</p>
+  <div class="example-box">
+    <p><strong>Loan Amount:</strong> ₹50,00,000</p>
+    <p><strong>Interest Rate:</strong> 8.75% per annum</p>
+    <p><strong>Tenure:</strong> 20 years (240 months)</p>
+    <p><strong>Monthly EMI:</strong> approximately ₹44,145</p>
+    <p><strong>Total Interest Paid:</strong> approximately ₹55,94,800</p>
+    <p><strong>Total Amount Paid:</strong> approximately ₹1,05,94,800</p>
+  </div>
+  <p>Notice that Ramesh ends up paying more in interest than his original loan amount. This is completely normal for long-tenure home loans, and it is exactly why it is important to calculate and plan before borrowing.</p>
+
+  <h2>How Tenure Affects Your EMI — A Comparison</h2>
+  <p>Using the same ₹50 lakh loan at 8.75%, here is how tenure changes the EMI and total cost:</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Tenure</th><th>Monthly EMI</th><th>Total Interest</th><th>Total Payment</th></tr></thead>
+      <tbody>
+        <tr><td>10 Years</td><td>~₹62,400</td><td>~₹24.9 Lakh</td><td>~₹74.9 Lakh</td></tr>
+        <tr><td>15 Years</td><td>~₹49,950</td><td>~₹39.9 Lakh</td><td>~₹89.9 Lakh</td></tr>
+        <tr><td>20 Years</td><td>~₹44,145</td><td>~₹55.9 Lakh</td><td>~₹1.06 Crore</td></tr>
+        <tr><td>30 Years</td><td>~₹39,350</td><td>~₹91.7 Lakh</td><td>~₹1.42 Crore</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Choosing 30 years over 10 years saves around ₹23,000 per month in EMI — but costs nearly ₹67 lakh more in total interest. This trade-off is the heart of home loan planning.</p>
+
+  <h2>How to Use an EMI Calculator</h2>
+  <p>Rather than doing the math manually, simply open the <a href="https://emicheck.in">EMI calculator</a> at EMI Check and follow these steps:</p>
+  <ol>
+    <li>Enter your <strong>loan amount</strong> using the slider or type it in</li>
+    <li>Enter the <strong>interest rate</strong> quoted by your bank</li>
+    <li>Select your desired <strong>loan tenure</strong> in years</li>
+    <li>The calculator instantly shows your monthly EMI, total interest, and a year-by-year repayment schedule</li>
+  </ol>
+  <p>Try different combinations to find the EMI that fits comfortably within your monthly budget. A common rule of thumb is that your home loan EMI should not exceed 40% of your take-home monthly salary.</p>
+
+  <h2>Quick Tips Before You Take a Home Loan</h2>
+  <ul>
+    <li>Always compare at least 3–4 lenders before deciding — even a 0.25% difference in rate saves lakhs over 20 years</li>
+    <li>Check your credit score before applying — a score above 750 usually gets you better rates</li>
+    <li>Make the maximum down payment you can afford — it reduces your loan amount and total interest</li>
+    <li>Consider making part-prepayments whenever you get a bonus or windfall — this reduces the principal faster</li>
+    <li>Do not stretch the tenure just to lower EMI — calculate the total cost first</li>
+  </ul>
+
+  <div class="cta-box">
+    <p><strong>Ready to calculate your home loan EMI?</strong></p>
+    <p>Use our free EMI Check calculator to instantly see your monthly instalment, total interest payable, and a complete year-by-year repayment schedule.</p>
+    <a href="https://emicheck.in" class="cta-btn">Calculate Your Home Loan EMI Free →</a>
+  </div>
+
+</article>
+</div>
+</main>
+
+<footer class="site-footer">
+  <p>&copy; 2026 <a href="https://emicheck.in">EMI Check</a> &mdash; Free Online EMI Calculator</p>
+  <p style="margin-top:4px;font-size:12px;opacity:.7"><a href="https://emicheck.in">Calculator</a> &bull; <a href="/privacy-policy.html">Privacy Policy</a></p>
+</footer>
+
+</body>
+</html>
