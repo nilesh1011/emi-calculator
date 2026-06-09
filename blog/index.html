@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="EMI Check Blog — Simple, practical guides on home loans, EMI calculation, interest rates, and smart borrowing for Indian readers.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://emicheck.in/blog/">
+  <meta property="og:title" content="Blog — EMI Check">
+  <meta property="og:description" content="Practical guides on home loans, EMI calculation, interest rates, and smart borrowing for Indian readers.">
+  <meta property="og:type" content="website">
+  <title>Blog — EMI Check | Loan &amp; EMI Guides for India</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💰</text></svg>">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary:      #6366f1;
+      --primary-dark: #4f46e5;
+      --primary-rgb:  99, 102, 241;
+      --success:      #059669;
+      --amber:        #d97706;
+      --bg:           #eef2ff;
+      --surface:      #ffffff;
+      --surface-2:    #f8fafc;
+      --text-1:       #1e293b;
+      --text-2:       #64748b;
+      --text-3:       #94a3b8;
+      --border:       #e2e8f0;
+      --radius:       18px;
+      --radius-sm:    10px;
+      --shadow:       0 4px 16px rgba(0,0,0,.06), 0 1px 4px rgba(0,0,0,.04);
+      --shadow-lg:    0 20px 48px rgba(99,102,241,.1), 0 4px 16px rgba(0,0,0,.06);
+      --ease:         all .22s ease;
+      --hdr-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 55%, #f64f59 100%);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      background: var(--bg);
+      color: var(--text-1);
+      line-height: 1.6;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ---- Header ---- */
+    .site-header {
+      background: var(--hdr-gradient);
+      color: #fff;
+      padding: 48px 20px 68px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .site-header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 50%, rgba(255,255,255,.12) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255,255,255,.08) 0%, transparent 40%);
+    }
+    .site-header::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 48px;
+      background: var(--bg);
+      clip-path: ellipse(60% 100% at 50% 100%);
+    }
+    .header-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: rgba(255,255,255,.8);
+      text-decoration: none;
+      font-size: 13.5px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      padding: 6px 14px;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 50px;
+      transition: var(--ease);
+    }
+    .back-link:hover { color: #fff; background: rgba(255,255,255,.2); }
+    .header-badge {
+      display: inline-block;
+      background: rgba(255,255,255,.15);
+      border: 1px solid rgba(255,255,255,.25);
+      border-radius: 50px;
+      padding: 4px 14px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .5px;
+      margin-bottom: 14px;
+    }
+    .site-header h1 {
+      font-size: clamp(26px, 5.5vw, 46px);
+      font-weight: 900;
+      letter-spacing: -1.2px;
+      margin-bottom: 10px;
+      text-shadow: 0 2px 12px rgba(0,0,0,.12);
+    }
+    .site-header p {
+      font-size: clamp(14px, 2vw, 16.5px);
+      opacity: .82;
+      line-height: 1.65;
+    }
+
+    /* ---- Layout ---- */
+    .container {
+      max-width: 1060px;
+      margin: -24px auto 0;
+      padding: 0 20px 64px;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ---- Section label ---- */
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .section-label span {
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .8px;
+      color: var(--text-3);
+    }
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ---- Blog Grid ---- */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    /* ---- Blog Card ---- */
+    .blog-card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform .2s ease, box-shadow .2s ease;
+      animation: slideUp .4s ease both;
+      text-decoration: none;
+      color: inherit;
+    }
+    .blog-card:nth-child(1) { animation-delay: .04s; }
+    .blog-card:nth-child(2) { animation-delay: .09s; }
+    .blog-card:nth-child(3) { animation-delay: .14s; }
+    .blog-card:nth-child(4) { animation-delay: .18s; }
+    .blog-card:nth-child(5) { animation-delay: .22s; }
+    .blog-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 28px 56px rgba(99,102,241,.15), 0 8px 20px rgba(0,0,0,.08);
+    }
+
+    /* Colour bar at top of each card */
+    .card-bar {
+      height: 4px;
+      background: var(--hdr-gradient);
+    }
+
+    .card-body {
+      padding: 22px 22px 18px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-category {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .6px;
+      color: var(--primary-dark);
+      background: rgba(var(--primary-rgb), .08);
+      border-radius: 50px;
+      padding: 3px 10px;
+      margin-bottom: 12px;
+      width: fit-content;
+    }
+
+    .card-title {
+      font-size: 16.5px;
+      font-weight: 800;
+      color: var(--text-1);
+      line-height: 1.35;
+      margin-bottom: 10px;
+    }
+
+    .card-desc {
+      font-size: 13.5px;
+      color: var(--text-2);
+      line-height: 1.7;
+      flex: 1;
+      margin-bottom: 18px;
+    }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+    }
+
+    .read-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      text-decoration: none;
+      transition: gap .18s ease;
+    }
+    .blog-card:hover .read-more { gap: 8px; }
+    .read-more svg { transition: transform .18s ease; }
+    .blog-card:hover .read-more svg { transform: translateX(3px); }
+
+    .read-time {
+      font-size: 11.5px;
+      color: var(--text-3);
+      font-weight: 600;
+    }
+
+    /* ---- Featured card (spans 2 cols) ---- */
+    .blog-card.featured {
+      grid-column: span 2;
+      flex-direction: row;
+    }
+    .blog-card.featured .card-bar {
+      width: 4px;
+      height: auto;
+      background: var(--hdr-gradient);
+      flex-shrink: 0;
+    }
+    .blog-card.featured .card-body {
+      padding: 28px 28px 22px;
+    }
+    .blog-card.featured .card-title {
+      font-size: 20px;
+    }
+    .blog-card.featured .card-desc {
+      font-size: 14.5px;
+    }
+    .blog-card.featured .card-category {
+      font-size: 11.5px;
+    }
+
+    /* ---- CTA Banner ---- */
+    .cta-banner {
+      background: var(--hdr-gradient);
+      border-radius: var(--radius);
+      padding: 32px 36px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      margin-top: 32px;
+      animation: slideUp .4s .26s ease both;
+    }
+    .cta-text h2 {
+      font-size: 20px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .cta-text p {
+      font-size: 14px;
+      color: rgba(255,255,255,.78);
+    }
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: #fff;
+      color: var(--primary-dark);
+      font-size: 14px;
+      font-weight: 800;
+      padding: 12px 24px;
+      border-radius: 50px;
+      text-decoration: none;
+      white-space: nowrap;
+      box-shadow: 0 4px 14px rgba(0,0,0,.15);
+      transition: transform .15s, box-shadow .15s;
+      flex-shrink: 0;
+    }
+    .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,.2); }
+
+    /* ---- Footer ---- */
+    .site-footer {
+      background: #1e293b;
+      color: #94a3b8;
+      text-align: center;
+      padding: 22px 20px;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+    .site-footer a { color: #a5b4fc; text-decoration: none; }
+    .site-footer a:hover { text-decoration: underline; }
+
+    /* ---- Animation ---- */
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ---- Responsive ---- */
+    @media (max-width: 900px) {
+      .blog-grid { grid-template-columns: 1fr 1fr; }
+      .blog-card.featured { grid-column: span 2; flex-direction: column; }
+      .blog-card.featured .card-bar { width: auto; height: 4px; }
+    }
+    @media (max-width: 580px) {
+      .site-header { padding: 36px 16px 58px; }
+      .container { padding: 0 14px 48px; margin-top: -18px; }
+      .blog-grid { grid-template-columns: 1fr; gap: 16px; }
+      .blog-card.featured { grid-column: span 1; }
+      .cta-banner { flex-direction: column; text-align: center; padding: 24px 20px; }
+      .card-body { padding: 18px 18px 14px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ==================== HEADER ==================== -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="https://emicheck.in" class="back-link">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      EMI Calculator
+    </a>
+    <div class="header-badge">📖 Learning Hub</div>
+    <h1>Blog</h1>
+    <p>Simple, practical guides on loans, EMI, and smart borrowing — written for everyday Indians.</p>
+  </div>
+</header>
+
+<!-- ==================== MAIN ==================== -->
+<main>
+<div class="container">
+
+  <div class="section-label">
+    <span>5 Articles</span>
+  </div>
+
+  <div class="blog-grid">
+
+    <!-- Card 1 — Featured -->
+    <a href="/blog/how-to-calculate-home-loan-emi.html" class="blog-card featured">
+      <div class="card-bar"></div>
+      <div class="card-body">
+        <span class="card-category">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          Home Loan
+        </span>
+        <div class="card-title">How to Calculate EMI for a Home Loan in India — Step by Step</div>
+        <div class="card-desc">Learn the exact EMI formula, understand how loan amount, interest rate, and tenure affect your monthly instalment, and see a worked example with real numbers.</div>
+        <div class="card-footer">
+          <span class="read-more">
+            Read article
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+          <span class="read-time">5 min read</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Card 2 -->
+    <a href="/blog/fixed-vs-floating-interest-rate-loan.html" class="blog-card">
+      <div class="card-bar"></div>
+      <div class="card-body">
+        <span class="card-category">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          Loan Planning
+        </span>
+        <div class="card-title">Fixed vs Floating Interest Rate — Which is Better for Your Loan?</div>
+        <div class="card-desc">Understand the real difference between fixed and floating rates, compare total costs, and decide which suits your situation and risk appetite.</div>
+        <div class="card-footer">
+          <span class="read-more">
+            Read article
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+          <span class="read-time">5 min read</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Card 3 -->
+    <a href="/blog/tips-to-reduce-emi-burden-india.html" class="blog-card">
+      <div class="card-bar"></div>
+      <div class="card-body">
+        <span class="card-category">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+          Loan Tips
+        </span>
+        <div class="card-title">5 Smart Tips to Reduce Your EMI Burden in India</div>
+        <div class="card-desc">Practical, actionable tips to lower your monthly EMI — from making smarter down payments to leveraging prepayments and improving your credit score.</div>
+        <div class="card-footer">
+          <span class="read-more">
+            Read article
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+          <span class="read-time">5 min read</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Card 4 -->
+    <a href="/blog/rbi-repo-rate-effect-on-home-loan-emi.html" class="blog-card">
+      <div class="card-bar"></div>
+      <div class="card-body">
+        <span class="card-category">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          Home Loan
+        </span>
+        <div class="card-title">How RBI Repo Rate Changes Affect Your Home Loan EMI</div>
+        <div class="card-desc">Understand how RBI policy decisions flow directly into your floating rate EMI, the difference between MCLR and EBLR, and what you should do when rates change.</div>
+        <div class="card-footer">
+          <span class="read-more">
+            Read article
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+          <span class="read-time">5 min read</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Card 5 -->
+    <a href="/blog/personal-loan-vs-home-loan-india.html" class="blog-card">
+      <div class="card-bar"></div>
+      <div class="card-body">
+        <span class="card-category">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          Loan Guide
+        </span>
+        <div class="card-title">Personal Loan vs Home Loan — Key Differences Every Indian Should Know</div>
+        <div class="card-desc">A side-by-side comparison of interest rates, tenure, tax benefits, and eligibility — so you borrow the right way for your situation.</div>
+        <div class="card-footer">
+          <span class="read-more">
+            Read article
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+          <span class="read-time">6 min read</span>
+        </div>
+      </div>
+    </a>
+
+  </div><!-- /blog-grid -->
+
+  <!-- CTA Banner -->
+  <div class="cta-banner">
+    <div class="cta-text">
+      <h2>Ready to calculate your EMI?</h2>
+      <p>Free, instant, no login needed — try different loan amounts, rates, and tenures in seconds.</p>
+    </div>
+    <a href="https://emicheck.in" class="cta-btn">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg>
+      Open EMI Calculator
+    </a>
+  </div>
+
+</div><!-- /container -->
+</main>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="site-footer">
+  <p>&copy; 2026 <a href="https://emicheck.in">EMI Check</a> &mdash; Free Online EMI Calculator</p>
+  <p style="margin-top:6px;font-size:12px">
+    <a href="https://emicheck.in">Calculator</a>
+    &nbsp;&bull;&nbsp;
+    <a href="/blog/">Blog</a>
+    &nbsp;&bull;&nbsp;
+    <a href="/privacy-policy.html">Privacy Policy</a>
+  </p>
+</footer>
+
+</body>
+</html>
