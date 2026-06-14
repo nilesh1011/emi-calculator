@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /*?trk=*
+Disallow: /*?utm_*
+Disallow: /*?ref=*
+Sitemap: https://emicheck.in/sitemap.xml
